@@ -72,11 +72,6 @@ public class PasswordView extends EditText {
 
     protected void setup() {
         setInputType(InputType.TYPE_CLASS_TEXT | (visible ? InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD : InputType.TYPE_TEXT_VARIATION_PASSWORD));
-
-        // Setting the "password" input types sets the font to monospace, so if we have a saved
-        // typeface, re-set it.
-        setTypeface(typeface);
-
         Drawable drawable = useStrikeThrough && !visible ? eyeWithStrike : eye;
         Drawable[] drawables = getCompoundDrawables();
         setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], drawable, drawables[3]);
@@ -95,9 +90,10 @@ public class PasswordView extends EditText {
         return super.onTouchEvent(event);
     }
 
-    @Override public void setTypeface(Typeface tf, int style) {
-        this.typeface = tf;
-        super.setTypeface(tf, style);
+    @Override public void setInputType(int type) {
+        this.typeface = getTypeface();
+        super.setInputType(type);
+        setTypeface(typeface);
     }
 
     public void setUseStrikeThrough(boolean useStrikeThrough) {
