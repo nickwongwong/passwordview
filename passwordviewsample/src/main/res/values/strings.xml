@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PasswordView Sample</string>
+    <string name="password_hint">Password</string>
+</resources>
