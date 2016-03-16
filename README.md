@@ -1,6 +1,6 @@
 :eyes: "All eyes, yeah I see 'em" — [Yo Gotti, Down in the DM](https://genius.com/Yo-gotti-down-in-the-dm-lyrics)
 
-`compile 'com.xwray:passwordview:0.1'`
+`compile 'com.xwray:passwordview:0.1'` *(see below)
 
 ### Drop-in Android password view for the new material design spec
     <com.xwray.passwordview.PasswordView
